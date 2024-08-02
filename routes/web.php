@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatchController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
@@ -41,4 +42,12 @@ Route::middleware([
     Route::get('/course-edit/{id}', [CourseController::class, 'edit'])->name('course-edit');
     Route::post('/course-edit/{id}', [CourseController::class, 'update'])->name('course-update');
     Route::delete('/course-delete/{id}', [CourseController::class, 'destroy'])->name('course-delete');
+
+    Route::get('/batch', [BatchController::class, 'index'])->name('batch');
+    Route::get('/batch-create', [BatchController::class, 'create'])->name('batch-create');
+    Route::post('/batch-create', [BatchController::class, 'store'])->name('batch-create');
+    Route::get('/batch-show//{id}', [BatchController::class, 'show'])->name('batch-show');
+    Route::get('/batch-edit/{id}', [BatchController::class, 'edit'])->name('batch-edit');
+    Route::post('/batch-edit/{id}', [BatchController::class, 'update'])->name('batch-update');
+    Route::delete('/batch-delete/{id}', [BatchController::class, 'destroy'])->name('batch-delete');
 });
