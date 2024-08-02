@@ -8,7 +8,7 @@
             <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <form class="space-y-6" action="{{ route('teacher-update', [$teacher->id]) }}" method="POST">
                     @csrf
-                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create Teacher</h5>
+                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Edit Teacher</h5>
                     <div>
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
                         <input type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="{{ $teacher->name }}" required />
