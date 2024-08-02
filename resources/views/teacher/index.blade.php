@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Student') }}
+            {{ __('Teacher') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -10,7 +10,7 @@
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
 
                     <div class="p-4">
-                        <a href="{{ route('student-create') }}" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300" title="Add New Student">
+                        <a href="{{ route('teacher-create') }}" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300" title="Add New Teacher">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br /><br />
@@ -26,20 +26,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($student as $student)
+                                    @foreach($teacher as $teacher)
                                     <tr class="border-b">
                                         <td class="py-2 px-3">{{ $loop->iteration }}</td>
-                                        <td class="py-2 px-3">{{ $student->name }}</td>
-                                        <td class="py-2 px-3">{{ $student->address }}</td>
-                                        <td class="py-2 px-3">{{ $student->mobile }}</td>
+                                        <td class="py-2 px-3">{{ $teacher->name }}</td>
+                                        <td class="py-2 px-3">{{ $teacher->address }}</td>
+                                        <td class="py-2 px-3">{{ $teacher->mobile }}</td>
                                         <td class="py-2 px-3 flex gap-3">
-                                            <a href="{{ route('student-show', ['id' => $student->id]) }}" title="View Student" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700 transition duration-300">
+                                            <a href="{{ route('teacher-show', ['id' => $teacher->id]) }}" title="View Teacher" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-700 transition duration-300">
                                                 <i class="fa fa-eye" aria-hidden="true"></i> View
                                             </a>
-                                            <a href="{{ route('student-edit', ['id' => $student->id]) }}" title="Edit Student" class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700 transition duration-300">
+                                            <a href="{{ route('teacher-edit', ['id' => $teacher->id]) }}" title="Edit Teacher" class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-700 transition duration-300">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                             </a>
-                                            <form method="POST" action="{{ route('student-delete', ['id' => $student->id]) }}" class="inline">
+                                            <form method="POST" action="{{ route('teacher-delete', ['id' => $teacher->id]) }}" class="inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700 transition duration-300" title="Delete Student" onclick="return confirm('Confirm delete?')">
