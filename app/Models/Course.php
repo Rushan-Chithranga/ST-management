@@ -13,4 +13,9 @@ class Course extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'syllabus', 'duration'];
 
+    public function batches()
+    {
+        return $this->hasMany(Batch::class);
+    }
+
 }
