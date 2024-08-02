@@ -52,4 +52,11 @@ class StudentController extends Controller
 
     }
 
+    public function destroy(string $id): RedirectResponse
+    {
+        student::destroy($id);
+        return redirect('student')->with('flash_message', 'Student Deleted!');
+
+    }
+
 }
