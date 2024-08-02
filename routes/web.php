@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,12 @@ Route::middleware([
     Route::get('/teacher-edit/{id}', [TeacherController::class, 'edit'])->name('teacher-edit');
     Route::post('/teacher-edit/{id}', [TeacherController::class, 'update'])->name('teacher-update');
     Route::delete('/teacher-delete/{id}', [TeacherController::class, 'destroy'])->name('teacher-delete');
+
+    Route::get('/course', [CourseController::class, 'index'])->name('course');
+    Route::get('/course-create', [CourseController::class, 'create'])->name('course-create');
+    Route::post('/course-create', [CourseController::class, 'store'])->name('course-create');
+    Route::get('/course-show//{id}', [CourseController::class, 'show'])->name('course-show');
+    Route::get('/course-edit/{id}', [CourseController::class, 'edit'])->name('course-edit');
+    Route::post('/course-edit/{id}', [CourseController::class, 'update'])->name('course-update');
+    Route::delete('/course-delete/{id}', [CourseController::class, 'destroy'])->name('course-delete');
 });
